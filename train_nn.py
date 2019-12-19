@@ -40,4 +40,4 @@ train_images, train_labels = load_data(train_data_directory)
 
 show_image()
 
-""" это вроде должно рабоать """
+""" это вроде должно работать """
