@@ -1,1 +1,1 @@
-for correct work required: tensorflow, keras, matplotlib
+for correct work required: tensorflow, keras, matplotlib, Scikit-image
