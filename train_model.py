@@ -9,9 +9,11 @@ print('Данные подготовлены')
 
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
-    keras.layers.Dense(512, activation='relu'),
-    keras.layers.Dense(62, activation='softmax')
-])
+    keras.layers.Dense(784, activation=tf.nn.relu),
+    keras.layers.Dense(124, activation=tf.nn.relu),
+    keras.layers.Dense(124, activation=tf.nn.relu),
+    keras.layers.Dense(62, activation=tf.nn.softmax)
+]) # а вдруг
 
 model.compile(
     optimizer='adam',
