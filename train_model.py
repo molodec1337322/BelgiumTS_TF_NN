@@ -1,3 +1,4 @@
+from __future__ import absolute_import, division, print_function, unicode_literals
 import research_datasets as rd
 import tensorflow as tf
 from tensorflow import keras
@@ -8,12 +9,10 @@ test_images, test_labels = rd.get_test_data()
 print('Данные подготовлены')
 
 model = keras.Sequential([
-    keras.layers.Flatten(input_shape=(28, 28)),
-    keras.layers.Dense(784, activation=tf.nn.relu),
-    keras.layers.Dense(124, activation=tf.nn.relu),
-    keras.layers.Dense(124, activation=tf.nn.relu),
+    keras.layers.Flatten(input_shape=(32, 32)),
+    keras.layers.Dense(1024, activation=tf.nn.relu),
     keras.layers.Dense(62, activation=tf.nn.softmax)
-]) # а вдруг
+])
 
 model.compile(
     optimizer='adam',
@@ -21,7 +20,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-model.fit(images, labels, epochs=40)
+model.fit(images, labels, epochs=100)
 
 model.save('model.h5')
 print('Модель сохранена!')

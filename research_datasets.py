@@ -74,7 +74,7 @@ def get_train_data():
     train_images, train_labels = load_data(train_data_directory)
 
     # трансформация изображений до размера 28х28 пикселей и их конвертация в серый цвет
-    train_images_transformed = [transform.resize(image, (28, 28)) for image in train_images]
+    train_images_transformed = [transform.resize(image, (32, 32)) for image in train_images]
     train_images_transformed = color_to_gray(train_images_transformed)
     return train_images_transformed, train_labels
 
@@ -88,7 +88,7 @@ def get_test_data():
     test_images, test_labels = load_data(test_data_directory)
 
     # трансформация изображений до размера 28х28 пикселей и их конвертация в серый цвет
-    test_images_transformed = [transform.resize(image, (28, 28)) for image in test_images]
+    test_images_transformed = [transform.resize(image, (32, 32)) for image in test_images]
     test_images_transformed = color_to_gray(test_images_transformed)
     return test_images_transformed, test_labels
 
