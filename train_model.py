@@ -12,7 +12,6 @@ from keras.preprocessing import image
 train_images, train_labels = rd.get_train_data()
 test_images, test_labels = rd.get_test_data()
 
-height, width, depth = 28, 28, 1
 train_images_num = len(train_images)
 test_images_num = len(test_images)
 
@@ -24,13 +23,12 @@ print('Данные подготовлены')
 
 hidden_size = 512
 num_epochs = 80
-batch_size = 128
 
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
-    keras.layers.Dense(512, activation=tf.nn.relu),
-    keras.layers.Dense(512, activation=tf.nn.relu),
-    keras.layers.Dense(62, activation=tf.nn.softmax)
+    keras.layers.Dense(hidden_size, activation=tf.nn.relu),
+    keras.layers.Dense(hidden_size, activation=tf.nn.relu),
+    keras.layers.Dense(num_epochs, activation=tf.nn.softmax)
 ])
 
 
