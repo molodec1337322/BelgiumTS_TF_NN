@@ -16,18 +16,9 @@ height, width, depth = 28, 28, 1
 train_images_num = len(train_images)
 test_images_num = len(test_images)
 
-print(train_images.shape)
-print(test_images.shape)
-
-
 classes = []
 classes = [sign_number for sign_number in test_labels if sign_number not in classes]
 num_classes = len(classes)
-
-'''
-train_labels = np_utils.to_categorical(train_labels, num_classes)
-test_labels = np_utils.to_categorical(test_labels, num_classes)
-'''
 
 print('Данные подготовлены')
 
